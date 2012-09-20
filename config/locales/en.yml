@@ -1,0 +1,64 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  activerecord:
+    attributes:
+      user:
+        first_name: ""
+        last_name: ""
+        email: ""
+        task_area: ""
+        introduction: ""
+        password: ""
+        password_confirmation: ""
+        password_digest: ""
+      category:
+        name: ""
+      post:
+        title: ""
+        content: ""
+        teaser: ""
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: "Kein Vorname angegeben"
+              too_long: "Vorname ist zu lang (max. 20 Zeichen)"
+            last_name:
+              blank: "Kein Nachname angegeben"
+              too_long: "Nachname ist zu lang (max. 40 Zeichen)"
+            email:
+              blank: "Keine E-Mail-Adresse angegeben"
+              taken: "E-Mail-Adresse bereits vergeben"
+              invalid: "Ungültige E-Mail-Adresse"
+            task_area:
+              blank: "Kein Aufgabenbereich angegeben"
+              too_long: "Aufgabenbereich ist zu lang (max. 40 Zeichen)"
+            password: 
+              too_short: "Passwort ist zu kurz (mind. 6 Zeichen)"
+              confirmation: "Passwort stimmt nicht mit Bestätigung überein"
+            password_confirmation:
+              blank: "Passwort muss bestätigt werden"
+            password_digest:
+              blank: "Kein Passwort angegeben"
+        category:
+          attributes:
+            name:
+              blank: "Kein Name angegeben"
+              taken: "Name bereits vergeben"
+              too_long: "Name ist zu lang (max. 30 Zeichen)"
+        post:
+          attributes:
+            title:
+              blank: "Kein Titel angegeben"
+              taken: "Titel bereits vergeben"
+              too_long: "Titel ist zu lang (max. 50 Zeichen)"
+            content:
+              blank: "Text fehlt"
+            teaser:
+              blank: "Teaser-Text fehlt"
+              too_long: "Teaser-Text ist zu lang (max. 500 Zeichen)"
+              
+              

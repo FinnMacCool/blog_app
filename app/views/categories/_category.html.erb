@@ -1,0 +1,8 @@
+<li>
+  <%= link_to "#{category.name} (#{category.posts.count})", "/kategorien/#{category.id}/anzeigen" %>
+  <% if current_user.admin? %>
+    | <%= link_to "umbenennen", "/kategorien/#{category.id}/bearbeiten" %>
+    | <%= link_to "löschen", category, method: :delete,
+                                   data: { confirm: "Kategorie #{category.name} wirklich löschen?" } %>
+  <% end %>
+</li>

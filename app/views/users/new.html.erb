@@ -1,0 +1,9 @@
+<h1>Neuen User erstellen</h1>
+
+<div class="content">
+  <%= form_for(@user) do |f| %>
+    <%= render 'user_fields', f:f %>
+    
+    <%= f.submit "User erstellen" %>
+  <% end %>
+</div>

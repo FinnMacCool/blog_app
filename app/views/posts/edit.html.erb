@@ -1,0 +1,9 @@
+<h1>Eintrag bearbeiten</h1>
+
+<div class="content">
+  <%= form_for(@post) do |f| %>
+    <%= render 'fields', f: f %>
+        
+    <%= f.submit "Änderungen speichern" %>
+  <% end %>
+</div>

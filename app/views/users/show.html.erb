@@ -1,0 +1,16 @@
+<h1><%= full_name(@user) %></h1>
+
+<div class="content">
+  <div>E-Mail-Adresse: <%= @user.email %></div>
+  <div>Aufgabenbereich: <%= @user.task_area %></div>
+  <div>Vorstellungstext: <br/>
+    <% if !@user.introduction.blank? %>
+      <%= wrap(@user.introduction) %>
+    <% else %>
+      N/A
+    <% end %></div>
+  <% if correct_user_or_admin? %>
+  <br/>
+    <div align="center"><%= link_to "Profil bearbeiten", "/user/#{@user.id}/bearbeiten" %></div>
+  <% end %>
+</div>

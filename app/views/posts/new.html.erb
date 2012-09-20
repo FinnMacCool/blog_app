@@ -1,0 +1,9 @@
+<h1>Neuen Eintrag erstellen</h1>
+
+<div class="content">
+  <%= form_for(@post) do |f| %>
+    <%= render 'fields', f: f %>
+        
+    <%= f.submit "Eintrag erstellen" %>
+  <% end %>
+</div>

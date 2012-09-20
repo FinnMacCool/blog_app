@@ -1,0 +1,13 @@
+<h1>Liste der User</h1>
+
+<div class="content">
+  <ul>
+    <%= render @users %>
+  </ul>
+  <% if current_user.admin? %>
+    <br/>
+    <div align="center">
+      <%= link_to "Neuer User", '/user/neu' %>
+    </div>
+  <% end %>
+</div>

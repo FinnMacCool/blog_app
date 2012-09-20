@@ -1,0 +1,16 @@
+<%= render 'shared/error_messages', object: f.object %>
+    
+<%= f.label :category_id, "Kategorie" %>
+<%= f.collection_select :category_id, Category.all, :id, :name %>
+    
+<%= f.label :title, "Titel" %>
+<%= f.text_field :title %>
+    
+<%= f.label :content, "Text" %>
+<%= f.text_area :content, size: "50x8" %>
+    
+<%= f.label :teaser, "Teaser-Text" %>
+<%= f.text_area :teaser, size: "50x8" %>
+    
+<%= f.label :tag_names, "Tags (durch Leerzeichen trennen)" %>
+<%= f.text_field :tag_names %>

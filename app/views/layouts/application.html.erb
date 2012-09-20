@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WWBlog</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <% flash.each do |key, value| %>
+      <div class="center alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  
+    <%= yield %>
+  
+    <%= debug(params) if Rails.env.development? %>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<h1>Kategorie umbennen</h1>
+
+<div class="content">
+  <%= form_for(@category) do |f| %>
+    <%= render 'shared/error_messages', object: @category %>
+    
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+    
+    
+    <%= f.submit "Namen ändern" %>
+  <% end %>
+</div>

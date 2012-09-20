@@ -1,0 +1,23 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <nav>
+        <ul class="nav pull-right">
+          <% if signed_in? %>
+            <% if current_user.admin? %>
+              <li><%= link_to "User", '/user' %></li>
+              <li><%= link_to "Kategorien", '/kategorien' %></li>              
+            <% end %>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Neuer Eintrag", '/eintraege/neu' %></li>
+            <li><%= link_to "Profil", "/user/#{current_user.id}/anzeigen" %></li>
+            <li>
+              <%= link_to "Logout", logout_path, method: "delete" %>
+            </li>
+          <% else %>  
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,9 @@
+<h1>Profil bearbeiten</h1>
+
+<div class="content">
+  <%= form_for(@user) do |f| %>
+    <%= render 'user_fields', f:f %>
+    
+    <%= f.submit "Änderungen speichern" %>
+  <% end %>
+</div>

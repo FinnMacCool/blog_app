@@ -1,0 +1,10 @@
+<h1>WWBlog</h1>
+
+<% if @posts.any? %>
+  <div class="posts">
+    <ol>
+      <%= render partial: 'shared/teaser', collection: @posts %>
+      <%= will_paginate @posts%>
+    </ol>
+  </div>
+<% end %>
