@@ -11,6 +11,6 @@
     <% end %></div>
   <% if correct_user_or_admin? %>
   <br/>
-    <div align="center"><%= link_to "Profil bearbeiten", "/user/#{@user.id}/bearbeiten" %></div>
+    <div align="center"><%= link_to "Profil bearbeiten", edit_user_path(@user.id) %></div>
   <% end %>
 </div>

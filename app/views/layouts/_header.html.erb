@@ -2,15 +2,21 @@
   <div class="navbar-inner">
     <div class="container">
       <nav>
-        <ul class="nav pull-right">
+        <span class="nav pull-left search_field">
+          <%= form_tag root_path, method: 'get' do %>
+            <%= text_field_tag :search_tags, params[:search_tags] %>
+            <%= submit_tag "Suchen", name: nil %>
+          <% end %>
+        </span>
+        <ul class="nav pull-right" style="padding-top: 11px">
           <% if signed_in? %>
             <% if current_user.admin? %>
-              <li><%= link_to "User", '/user' %></li>
-              <li><%= link_to "Kategorien", '/kategorien' %></li>              
+              <li><%= link_to "User", users_path %></li>
+              <li><%= link_to "Kategorien", categories_path %></li>              
             <% end %>
             <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Neuer Eintrag", '/eintraege/neu' %></li>
-            <li><%= link_to "Profil", "/user/#{current_user.id}/anzeigen" %></li>
+            <li><%= link_to "Neuer Eintrag", new_post_path %></li>
+            <li><%= link_to "Profil", user_path(current_user.id) %></li>
             <li>
               <%= link_to "Logout", logout_path, method: "delete" %>
             </li>

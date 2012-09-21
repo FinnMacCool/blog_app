@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:success] = "Neuer User wurde erstellt."
-      redirect_to "/user/#{@user.id}/anzeigen"
+      redirect_to @user
     else
       render 'new'
     end
@@ -44,11 +44,11 @@ class UsersController < ApplicationController
     doomed_user = User.find(params[:id])
     if doomed_user == current_user
       flash[:failure] = "Der Admin kann sich nicht selbst löschen."
-      redirect_to users_url
+      redirect_to users_path
     else
       doomed_user.destroy
       flash[:success] = "User gelöscht."
-      redirect_to users_url
+      redirect_to users_path
     end
   end
   

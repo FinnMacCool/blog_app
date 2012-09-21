@@ -1,9 +1,10 @@
 <h3>
   von 
   <span onmouseover="$('#popup<%= p.id %>').show()" onmouseleave="$('#popup<%= p.id %>').hide()">
-    <%= link_to User.find(p.author_id).first_name, "/user/#{p.author_id}/anzeigen" %>
+    <%= link_to User.find(p.author_id).first_name, user_path(p.author_id) %>
   </span> 
-  <%= "am #{p.created_at.strftime("%d.%m.%y")} in #{Category.find(p.category_id).name}"%>
+  <%= "am #{p.created_at.strftime("%d.%m.%y")} in " %>
+  <%= link_to Category.find(p.category_id).name, category_path(p.category_id) %>
 </h3>
 <div class="popup" id="popup<%= p.id %>">
   Voller Name: <%= full_name(User.find(p.author_id)) %><br/>

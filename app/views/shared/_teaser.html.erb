@@ -1,12 +1,12 @@
 <li id="<%= teaser.id %>">
   <div class="header">
     <h2>
-      <%= link_to wrap_title(teaser.title), "/eintraege/#{teaser.id}/anzeigen" %>
+      <%= link_to wrap_title(teaser.title), post_path(teaser.id) %>
     </h2>
-    <%= render 'header_part', p: teaser %>
+    <%= render 'shared/header_part', p: teaser %>
   </div>
   <div class="post">
     <%= wrap(teaser.teaser) %>
-    <%= link_to "[Mehr]", "/eintraege/#{teaser.id}/anzeigen" %>
+    <%= link_to "[Mehr]", post_path(teaser.id) %>
   </div>
 </li>

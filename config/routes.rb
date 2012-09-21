@@ -1,24 +1,15 @@
 BlogApp::Application.routes.draw do
-  resources :users
-  resources :posts
-  resources :categories
+  scope(path_names: { new: "neu", edit: "bearbeiten" }) do
+    resources :users, path: "user"
+    resources :posts, path: "eintraege"
+    resources :categories, path: "kategorien"
+  end
+  
   resources :sessions, only: [:new, :create, :destroy]
   
   root to: "posts#index"
   
-  match '/eintraege/neu', to: 'posts#new'
-  match '/eintraege/:id/anzeigen', to: 'posts#show'
-  match '/eintraege/:id/bearbeiten', to: 'posts#edit'
   
-  match '/user', to: 'users#index'
-  match '/user/neu',  to: 'users#new'
-  match '/user/:id/anzeigen', to: 'users#show'
-  match '/user/:id/bearbeiten', to: 'users#edit'
-  
-  match '/kategorien', to: 'categories#index'
-  match '/kategorien/neu', to: 'categories#new'
-  match '/kategorien/:id/anzeigen', to: 'categories#show'
-  match '/kategorien/:id/bearbeiten', to: 'categories#edit'
   
   match '/login',  to: 'sessions#new'
   match '/logout', to: 'sessions#destroy', via: :delete

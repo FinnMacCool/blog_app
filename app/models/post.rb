@@ -1,10 +1,9 @@
 class Post < ActiveRecord::Base
+  acts_as_ordered_taggable
   attr_accessible :title, :content, :teaser, :category_id, :tag_names
   
   belongs_to :author, class_name: "User"
   belongs_to :category
-  has_many :taggings, dependent: :destroy
-  has_many :tags, through: :taggings
   
   validates :title, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :content, presence: true
@@ -15,19 +14,25 @@ class Post < ActiveRecord::Base
   default_scope order: 'posts.created_at DESC'
   
   attr_accessor :tag_names
-  after_save :assign_tags
+  before_save :assign_tags
   
   def tag_names
-    @tag_names || tags.map(&:name).join(' ')
+    @tag_names || tag_list.join(' ')
+  end
+  
+  def self.search(search_tags)
+    unless search_tags.blank?
+      self.tagged_with(search_tags.split(/\s+/), any: true)
+    else
+      self
+    end
   end
   
   private
   
   def assign_tags
     if @tag_names
-      self.tags = @tag_names.split(/\s+/).map do |name|
-        Tag.find_or_create_by_name(name)
-      end
+      self.tag_list = @tag_names.split(/\s+/)
     end
   end
 end

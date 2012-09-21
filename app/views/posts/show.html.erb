@@ -3,7 +3,7 @@
     <h2>
       <%= wrap_title(@post.title) %>
     </h2>
-    <%= render 'header_part', p: @post %>
+    <%= render 'shared/header_part', p: @post %>
   </div>
   <div class="post">
     <%= wrap(@post.content) %>
@@ -11,7 +11,7 @@
   <% if signed_in? && correct_user_or_admin? %>
   <div align="center">
     <br/>
-    <%= link_to "Bearbeiten", "/eintraege/#{@post.id}/bearbeiten" %>
+    <%= link_to "Bearbeiten", edit_post_path(@post) %>
   </div>
   <% end %>
 </div>

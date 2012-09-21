@@ -1,5 +1,6 @@
 <h1>WWBlog</h1>
 
+
 <% if @posts.any? %>
   <div class="posts">
     <ol>
@@ -7,4 +8,6 @@
       <%= will_paginate @posts%>
     </ol>
   </div>
+<% else %>
+<div align="center">Keine Einträge vorhanden.</div>
 <% end %>

@@ -1,7 +1,7 @@
 <h1><%= "#{@category.name} (#{@category.posts.count})" %>
 <% if current_user.admin? %>
 <font size="2" spacing="2px">
-    <%= link_to "umbenennen", "/kategorien/#{@category.id}/bearbeiten"%>
+    <%= link_to "umbenennen", edit_category_path(@category.id) %>
   </font>
 <% end %>
 </h1>
