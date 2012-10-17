@@ -1,3 +1,4 @@
+<% provide(:title, 'Login') %>
 <h1>Login</h1>
 
 <div class="content">
@@ -8,7 +9,8 @@
 
     <%= label_tag :password, "Passwort" %>
     <%= password_field_tag :password %>
-
+    
+    <br/>
     <%= submit_tag "Login" %>
   <% end %>
 </div>

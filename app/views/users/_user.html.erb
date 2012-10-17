@@ -1,7 +1,7 @@
 <li>
   <%= link_to full_name(user), user_path(user.id) %>
-  <% if current_user.admin? %>
+  <% if signed_in? && current_user.admin? && !current_user?(user) %>
     | <%= link_to "löschen", user, method: :delete,
-                                   data: { confirm: "User #{full_name(user)} wirklich löschen?" } %>
+                                   data: { confirm: "User #{full_name(user)} wirklich löschen? (Zugehörige Posts bleiben erhalten.)" } %>
   <% end %>
 </li>

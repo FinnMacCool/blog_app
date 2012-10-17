@@ -16,6 +16,7 @@ en:
       category:
         name: ""
       post:
+        category_id: ""
         title: ""
         content: ""
         teaser: ""
@@ -51,6 +52,8 @@ en:
               too_long: "Name ist zu lang (max. 30 Zeichen)"
         post:
           attributes:
+            category_id:
+              blank: "Keine Kategorie vorhanden. Bitte wenden Sie sich an den zuständigen Admin."
             title:
               blank: "Kein Titel angegeben"
               taken: "Titel bereits vergeben"

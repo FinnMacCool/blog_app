@@ -1,7 +1,7 @@
 # Coding: UTF-8
 class CategoriesController < ApplicationController
-  before_filter :signed_in_user, only: [:new, :edit, :update, :create, :destroy]
-  before_filter :admin_user, only: [:new, :edit, :update, :create, :destroy]
+  before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :admin_user, only: [:new, :create, :edit, :update, :destroy]
   
   
   def index
@@ -43,6 +43,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     Category.find(params[:id]).destroy
+    flash[:success] = "Kategorie gelöscht."
     redirect_to categories_path
   end
 end

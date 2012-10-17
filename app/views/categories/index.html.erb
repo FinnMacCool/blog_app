@@ -1,11 +1,14 @@
+<% provide(:title, "Liste der Kategorien") %>
 <h1>Liste der Kategorien</h1>
 
 <div class="content">
   <ul>
     <%= render @categories %>
   </ul>
+  <% if signed_in? && current_user.admin? %>
   <br/>
   <div align="center">
     <%= link_to "Neue Kategorie", new_category_path %>
   </div>
+  <% end %>
 </div>

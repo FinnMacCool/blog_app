@@ -1,10 +1,11 @@
+<% provide(:title, "Liste der User") %>
 <h1>Liste der User</h1>
 
 <div class="content">
   <ul>
     <%= render @users %>
   </ul>
-  <% if current_user.admin? %>
+  <% if signed_in? && current_user.admin? %>
     <br/>
     <div align="center">
       <%= link_to "Neuer User", new_user_path %>

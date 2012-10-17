@@ -1,3 +1,4 @@
+<% provide(:title, full_name(@user)) %>
 <h1><%= full_name(@user) %></h1>
 
 <div class="content">
@@ -9,7 +10,7 @@
     <% else %>
       N/A
     <% end %></div>
-  <% if correct_user_or_admin? %>
+  <% if signed_in? && correct_user_or_admin? %>
   <br/>
     <div align="center"><%= link_to "Profil bearbeiten", edit_user_path(@user.id) %></div>
   <% end %>

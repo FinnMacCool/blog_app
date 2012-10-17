@@ -2,9 +2,10 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :task_area, :introduction, :password, :password_confirmation
   has_secure_password
   
+  before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
     
-  has_many :posts, foreign_key: "author_id"
+  has_many :posts, foreign_key: "author_id", dependent: :nullify
   
   validates :first_name, presence: true, length: { maximum: 20 }
   validates :last_name, presence: true, length: { maximum: 40 }

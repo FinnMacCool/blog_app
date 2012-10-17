@@ -1,13 +1,21 @@
 <h3>
-  von 
-  <span onmouseover="$('#popup<%= p.id %>').show()" onmouseleave="$('#popup<%= p.id %>').hide()">
-    <%= link_to User.find(p.author_id).first_name, user_path(p.author_id) %>
-  </span> 
-  <%= "am #{p.created_at.strftime("%d.%m.%y")} in " %>
-  <%= link_to Category.find(p.category_id).name, category_path(p.category_id) %>
+  verfasst 
+  <% if p.author.present? %>
+    von 
+    <span onmouseover="$('#popup<%= p.id %>').show()" onmouseleave="$('#popup<%= p.id %>').hide()">
+      <%= link_to User.find(p.author_id).first_name, user_path(p.author_id) %>
+    </span>
+  <% end %>
+  <%= "am #{p.created_at.strftime("%d.%m.%y")}" %>
+  <% if p.category.present? %>
+    in
+    <%= link_to Category.find(p.category_id).name, category_path(p.category_id) %>
+  <% end %>
 </h3>
-<div class="popup" id="popup<%= p.id %>">
-  Voller Name: <%= full_name(User.find(p.author_id)) %><br/>
-  E-Mail: <%= User.find(p.author_id).email %><br/>
-  Aufgabenbereich: <%= User.find(p.author_id).task_area %>
-</div>
+<% if p.author.present? %>
+  <div class="popup" id="popup<%= p.id %>">
+    Voller Name: <%= full_name(User.find(p.author_id)) %><br/>
+    E-Mail: <%= User.find(p.author_id).email %><br/>
+    Aufgabenbereich: <%= User.find(p.author_id).task_area %>
+  </div>
+<% end %>

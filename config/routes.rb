@@ -10,7 +10,6 @@ BlogApp::Application.routes.draw do
   root to: "posts#index"
   
   
-  
   match '/login',  to: 'sessions#new'
   match '/logout', to: 'sessions#destroy', via: :delete
 
