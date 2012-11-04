@@ -142,7 +142,7 @@ describe "Post pages" do
         it { should have_title('Neuen Eintrag erstellen') }
         it { should have_h1('Neuen Eintrag erstellen') }
         it { should have_content('Fehler') }
-        it { should have_content("Keine Kategorie vorhanden. Bitte wenden Sie sich an den zuständigen Admin.") }
+        it { should have_content("Kategorie - kein Standardwert vorhanden. Bitte wenden Sie sich an den zuständigen Admin.") }
       end
     end
     
@@ -165,7 +165,7 @@ describe "Post pages" do
           it { should have_title('Neuen Eintrag erstellen') }
           it { should have_h1('Neuen Eintrag erstellen') }
           it { should have_content('Fehler') }
-          it { should have_content("Kein Titel angegeben") }
+          it { should have_content("Titel fehlt") }
           it { should have_content("Text fehlt") }
           it { should have_content('Teaser-Text fehlt') }
         end

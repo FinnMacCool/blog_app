@@ -1,6 +1,6 @@
 <% provide(:title, @category.name) %>
 <h1><%= "#{@category.name} (#{@category.posts.count})" %>
-<% if signed_in? && current_user.admin? %>
+<% if logged_in? && current_user.admin? %>
   <font size="2" spacing="2px">
     <%= link_to "umbenennen", edit_category_path(@category.id) %>
     | <%= link_to "löschen", @category, method: :delete,

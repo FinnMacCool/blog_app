@@ -1,6 +1,6 @@
 # Coding: UTF-8
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_filter :correct_user_or_admin, only: [:edit, :update]
   before_filter :admin_user, only: [:new, :create, :destroy]
   
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes(params[:user])
       flash[:success] = "Änderungen gespeichert"
-      sign_in @user if current_user?(@user)
+      log_in @user if current_user?(@user)
       redirect_to @user
     else
       render 'edit'

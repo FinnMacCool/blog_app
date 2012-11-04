@@ -1,11 +1,11 @@
 module SessionsHelper
 
-  def sign_in(user)
+  def log_in(user)
     cookies.permanent[:remember_token] = user.remember_token
     self.current_user = user
   end
 
-  def signed_in?
+  def logged_in?
     !current_user.nil?
   end
 
@@ -21,14 +21,14 @@ module SessionsHelper
     user == current_user
   end
 
-  def signed_in_user
-    unless signed_in?
+  def logged_in_user
+    unless logged_in?
       store_location
       redirect_to login_url, notice: "Bitte erst einloggen."
     end
   end
   
-  def sign_out
+  def log_out
     self.current_user = nil
     cookies.delete(:remember_token)
   end

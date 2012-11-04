@@ -9,7 +9,7 @@
   <div class="post">
     <%= wrap(@post.content) %>
   </div>
-  <% if signed_in? && (current_user?(@post.author) || current_user.admin?) %>
+  <% if logged_in? && (current_user?(@post.author) || current_user.admin?) %>
   <div align="center">
     <br/>
     <%= link_to "Bearbeiten", edit_post_path(@post) %> |

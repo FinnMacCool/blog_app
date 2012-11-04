@@ -181,7 +181,7 @@ describe "Category pages" do
         it { should have_title('Neue Kategorie erstellen') }
         it { should have_h1('Neue Kategorie erstellen') }
         it { should have_content('Fehler') }
-        it { should have_content("Kein Name angegeben") }
+        it { should have_content("Name fehlt") }
       end
     end
 

@@ -10,7 +10,7 @@
     <% else %>
       N/A
     <% end %></div>
-  <% if signed_in? && correct_user_or_admin? %>
+  <% if logged_in? && correct_user_or_admin? %>
   <br/>
     <div align="center"><%= link_to "Profil bearbeiten", edit_user_path(@user.id) %></div>
   <% end %>

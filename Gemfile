@@ -8,6 +8,11 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'acts-as-taggable-on', '~> 2.3.1'
 
+# active admin stuff
+gem 'activeadmin'
+gem 'sass-rails',   '3.2.5'
+gem "meta_search",    '>= 1.1.0.pre'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -21,7 +26,6 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '3.2.5'
   gem 'coffee-rails', '3.2.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

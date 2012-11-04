@@ -12,7 +12,7 @@
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Kategorien", categories_path %></li>
           <li><%= link_to "User", users_path %></li>
-          <% if signed_in? %>
+          <% if logged_in? %>
             <li><%= link_to "Neuer Eintrag", new_post_path %></li>
             <li><%= link_to "Profil", user_path(current_user.id) %></li>
             <li><%= link_to "Logout", logout_path, method: "delete" %></li>
