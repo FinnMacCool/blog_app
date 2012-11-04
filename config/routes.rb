@@ -1,4 +1,8 @@
 BlogApp::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   scope(path_names: { new: "neu", edit: "bearbeiten" }) do
     resources :users, path: "user"
     resources :posts, path: "eintraege"

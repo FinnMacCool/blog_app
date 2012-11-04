@@ -5,63 +5,63 @@ en:
   activerecord:
     attributes:
       user:
-        first_name: ""
-        last_name: ""
-        email: ""
-        task_area: ""
-        introduction: ""
-        password: ""
-        password_confirmation: ""
-        password_digest: ""
+        first_name: "Vorname"
+        last_name: "Nachname"
+        email: "E-Mail-Adresse"
+        task_area: "Aufgabenbereich"
+        introduction: "Vorstellungstext"
+        password: "Passwort"
+        password_confirmation: "Passwortbestätigung"
+        password_digest: "Passwort"
       category:
-        name: ""
+        name: "Name"
       post:
-        category_id: ""
-        title: ""
-        content: ""
-        teaser: ""
+        category_id: "Kategorie"
+        title: "Titel"
+        content: "Text"
+        teaser: "Teaser-Text"
     errors:
       models:
         user:
           attributes:
             first_name:
-              blank: "Kein Vorname angegeben"
-              too_long: "Vorname ist zu lang (max. 20 Zeichen)"
+              blank: "fehlt"
+              too_long: "ist zu lang (max. 20 Zeichen)"
             last_name:
-              blank: "Kein Nachname angegeben"
-              too_long: "Nachname ist zu lang (max. 40 Zeichen)"
+              blank: "fehlt"
+              too_long: "ist zu lang (max. 40 Zeichen)"
             email:
-              blank: "Keine E-Mail-Adresse angegeben"
-              taken: "E-Mail-Adresse bereits vergeben"
-              invalid: "Ungültige E-Mail-Adresse"
+              blank: "fehlt"
+              taken: "bereits vergeben"
+              invalid: "ungültig"
             task_area:
-              blank: "Kein Aufgabenbereich angegeben"
-              too_long: "Aufgabenbereich ist zu lang (max. 40 Zeichen)"
+              blank: "fehlt"
+              too_long: "ist zu lang (max. 40 Zeichen)"
             password: 
-              too_short: "Passwort ist zu kurz (mind. 6 Zeichen)"
-              confirmation: "Passwort stimmt nicht mit Bestätigung überein"
+              too_short: "ist zu kurz (mind. 6 Zeichen)"
+              confirmation: "stimmt nicht mit Bestätigung überein"
             password_confirmation:
-              blank: "Passwort muss bestätigt werden"
+              blank: "fehlt"
             password_digest:
-              blank: "Kein Passwort angegeben"
+              blank: "fehlt"
         category:
           attributes:
             name:
-              blank: "Kein Name angegeben"
-              taken: "Name bereits vergeben"
-              too_long: "Name ist zu lang (max. 30 Zeichen)"
+              blank: "fehlt"
+              taken: "bereits vergeben"
+              too_long: "ist zu lang (max. 30 Zeichen)"
         post:
           attributes:
             category_id:
-              blank: "Keine Kategorie vorhanden. Bitte wenden Sie sich an den zuständigen Admin."
+              blank: "- kein Standardwert vorhanden. Bitte wenden Sie sich an den zuständigen Admin."
             title:
-              blank: "Kein Titel angegeben"
-              taken: "Titel bereits vergeben"
-              too_long: "Titel ist zu lang (max. 50 Zeichen)"
+              blank: "fehlt"
+              taken: "bereits vergeben"
+              too_long: "ist zu lang (max. 50 Zeichen)"
             content:
-              blank: "Text fehlt"
+              blank: "fehlt"
             teaser:
-              blank: "Teaser-Text fehlt"
-              too_long: "Teaser-Text ist zu lang (max. 500 Zeichen)"
+              blank: "fehlt"
+              too_long: "ist zu lang (max. 500 Zeichen)"
               
               

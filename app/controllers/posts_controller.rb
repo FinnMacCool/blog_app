@@ -1,6 +1,6 @@
 # Coding: UTF-8
 class PostsController < ApplicationController
-  before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_filter :authorized_user, only: [:edit, :update, :destroy]
   
   def index

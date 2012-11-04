@@ -5,7 +5,7 @@
   <ul>
     <%= render @users %>
   </ul>
-  <% if signed_in? && current_user.admin? %>
+  <% if logged_in? && current_user.admin? %>
     <br/>
     <div align="center">
       <%= link_to "Neuer User", new_user_path %>

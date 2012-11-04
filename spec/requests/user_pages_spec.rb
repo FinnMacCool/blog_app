@@ -167,14 +167,14 @@ describe "User pages" do
         it { should have_title('Neuen User erstellen') }
         it { should have_h1('Neuen User erstellen') }
         it { should have_content('Fehler') }
-        it { should have_content("Kein Passwort angegeben") }
-        it { should have_content("Kein Vorname angegeben") }
-        it { should have_content('Kein Nachname angegeben') }
-        it { should have_content("Keine E-Mail-Adresse angegeben") }
-        it { should have_content('Ungültige E-Mail-Adresse') }
-        it { should have_content("Kein Aufgabenbereich angegeben") }
+        it { should have_content("Passwort fehlt") }
+        it { should have_content("Vorname fehlt") }
+        it { should have_content('Nachname fehlt') }
+        it { should have_content("E-Mail-Adresse fehlt") }
+        it { should have_content('E-Mail-Adresse ungültig') }
+        it { should have_content("Aufgabenbereich fehlt") }
         it { should have_content("Passwort ist zu kurz (mind. 6 Zeichen)") }
-        it { should have_content("Passwort muss bestätigt werden") }
+        it { should have_content("Passwortbestätigung fehlt") }
       end
     end
 

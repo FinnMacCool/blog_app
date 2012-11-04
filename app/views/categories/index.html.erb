@@ -5,7 +5,7 @@
   <ul>
     <%= render @categories %>
   </ul>
-  <% if signed_in? && current_user.admin? %>
+  <% if logged_in? && current_user.admin? %>
   <br/>
   <div align="center">
     <%= link_to "Neue Kategorie", new_category_path %>
